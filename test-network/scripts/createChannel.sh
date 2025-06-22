@@ -80,6 +80,8 @@ joinChannel() {
 	while [ $rc -ne 0 -a $COUNTER -lt $MAX_RETRY ] ; do
     sleep $DELAY
     set -x
+	ls -l $BLOCKFILE
+	docker ps
     peer channel join -b $BLOCKFILE >&log.txt
     res=$?
     { set +x; } 2>/dev/null
