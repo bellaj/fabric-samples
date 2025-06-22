@@ -43,6 +43,7 @@ joinChannel() {
     ls -l $BLOCKFILE
     docker ps
     peer channel join -b $BLOCKFILE >&log.txt
+    cat log.txt
     res=$?
     { set +x; } 2>/dev/null
     let rc=$res
